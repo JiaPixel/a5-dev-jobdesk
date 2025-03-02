@@ -49,31 +49,30 @@ clearBtn.addEventListener('click', () => {
 buttons.forEach(button => {
   button.addEventListener('click', function () {
     if (!button.disabled) {
-      // Button Disable করা
+   
       button.disabled = true;
-      button.innerText = 'Completed ✅';
+      button.innerText = 'Completed';
       button.style.backgroundColor = 'gray';
       button.style.cursor = 'not-allowed';
 
-      // Card Title বের করা
       const cardTitle = button.closest('.card-body').querySelector('.card-title').innerText;
 
-      // Alert Message দেখানো with Card Title
-      alert(`${cardTitle} Task Completed Successfully 🎯`);
+      
+      alert(`${cardTitle} Task Completed Successfully `);
 
-      // Add History
+      
       addHistory(cardTitle);
 
-      // Completed Task Count বাড়ানো
+      
       completedCount++;
       completedTaskSpan.innerText = completedCount;
 
-      // Total Task Count কমানো
+      
       totalTaskSpan.innerText = --totalTaskCount;
 
-      // সব টাস্ক কমপ্লিট হলে Final Alert দেখানো
+      
       if (totalTaskCount === 0) {
-        alert('All Tasks Completed Successfully 🎯🎉');
+        alert('All Tasks Completed Successfully');
       }
     }
   });
