@@ -8,7 +8,7 @@
   const div = document.getElementById("question-page");
 
   div.addEventListener("click", function () {
-    window.location.href = "http://127.0.0.1:5500/A5-Dev-Board/question.html";
+    window.location.href = "./question.html";
   });
 
   function showDate() {
