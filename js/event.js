@@ -11,27 +11,27 @@
     window.location.href = "./question.html";
   });
 
+  
+
   function showDate() {
-    const date = new Date(); // Get current date
-    const currentDate = date.toDateString(); // Format like "Fri Feb 28 2025"
+    const date = new Date(); 
+    const currentDate = date.toDateString(); 
     
-    document.getElementById("today").innerHTML = `<br> ${currentDate} <br>`; // Update div content
+    document.getElementById("today").innerHTML = `<br> ${currentDate} <br>`;
   }
 
-  showDate(); // Call the function on page load
+  showDate(); 
 
-  // button disabled 
-// সব Button সিলেক্ট করা
+
 const buttons = document.querySelectorAll('.btn-primary');
-let completedCount = 24; // Initial Completed Task Count
+let completedCount = 24; 
 const completedTaskSpan = document.getElementById('completed-task');
 
-let totalTaskCount = 6; // Initial Task Assigned Count
+let totalTaskCount = 6; 
 const totalTaskSpan = document.getElementById('total-taskcount');
 const historyDiv = document.getElementById('history');
 const clearBtn = document.getElementById('clear-btn');
 
-// Function to Add History
 function addHistory(task) {
   const time = new Date().toLocaleTimeString();
   const p = document.createElement('p');
@@ -40,12 +40,12 @@ function addHistory(task) {
   historyDiv.appendChild(p);
 }
 
-// Clear History
+
 clearBtn.addEventListener('click', () => {
   historyDiv.innerHTML = '';
 });
 
-// Loop করে সব Button এ Click Event লাগানো
+// ----------------------
 buttons.forEach(button => {
   button.addEventListener('click', function () {
     if (!button.disabled) {
@@ -69,14 +69,11 @@ buttons.forEach(button => {
       completedTaskSpan.innerText = completedCount;
 
       // Total Task Count কমানো
-      totalTaskCount--;
-      totalTaskSpan.innerText = totalTaskCount;
+      totalTaskSpan.innerText = --totalTaskCount;
 
       // সব টাস্ক কমপ্লিট হলে Final Alert দেখানো
       if (totalTaskCount === 0) {
-        setTimeout(() => {
-          alert('All Tasks Completed Successfully 🎯🎉');
-        }, 500);
+        alert('All Tasks Completed Successfully 🎯🎉');
       }
     }
   });
